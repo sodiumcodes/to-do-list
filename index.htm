@@ -8,18 +8,30 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- Bootstrap CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .list-items{
+            width: 250px;
+        }
+        
+        body{
+            background: linear-gradient(54deg, #ffffb3, #d9c5ff);
+        }
+    </style>
 </head>
-<body class="container-fluid m-3 d-flex justify-content-center">
-    <div class=" main d-flex flex-column align-items-center bg-light">
+<body class="container-fluid mt-3 d-flex justify-content-center bg-dark-subtle">
+
+    <div class=" main d-flex flex-column align-items-center text-center rounded text-white bg-dark p-1">
+
         <h2 class="text-center p-2">TO-DO LIST</h2>
+        
         <div class="d-flex flex-row justify-content-between">
 
             <input type="text" id="taskEnter" placeholder="ADD YOUR TASK HERE" 
-            class="text-center form-control w-100 mb-2 ms-3">
+            class="text-center form-control border border-primary border-2 rounded w-100 mb-2 ms-3 ">
 
             <button class=" badge btn btn-success mb-2 ms-2 me-3" onclick="addTask()">Add</button>
         </div>
-        <ul id="tasks" class="list-group"></ul>
+        <ul id="tasks" class="list-group  d-flex justify-content-between"></ul>
     </div>
     <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -33,7 +45,8 @@
 
                 const taskList= document.getElementById("tasks");
                 const li= document.createElement("li");
-                li.className= "list-unstyled"
+                li.className= "list-unstyled my-1 bg-dark-sutle text-white border border-2 border-light rounded p-1 list-items" // how to add space bettwen the task that's added
+                // li.style("width:100px;");
                 li.textContent = taskText;
                  
                 const deleteBtn = document.createElement("button");
